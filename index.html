@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYT Books</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .book-card {
+            margin-bottom: 20px;
+            width: 250px;
+        }
+        .book-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .center {
+            margin: 0 auto;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>NYT Books</h1>
+    <div>
+        <label for="category">Select a category:</label>
+        <select id="category" class="searchable"></select>
+    </div>
+    <div>
+        <label for="datepicker">Select a date:</label>
+        <input type="text" id="datepicker">
+    </div>
+    <div id="booksList" class="container-lg book-list"></div>
+    <div id="pagination" class="center"></div>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="bookDetails"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#datepicker").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        });
+    </script>
+</body>
+</html>
